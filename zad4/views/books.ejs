@@ -1,0 +1,16 @@
+<%- include('partials/navigations') %>
+<h1>Books</h1>
+<% if (books.length === 0) { %>
+<p>No books has been found</p>
+<% } else { %>
+<ul>
+  <% books.forEach(book => { %>
+  <li>
+    <%= book.title %> by <%= book.author %>, published in <%=
+    book.publishingYear %>
+    <a href="/book/delete/<%= book.id %>">delete</a>
+    <a href="/book/<%= book.id %>">see book</a>
+  </li>
+  <% }) %>
+</ul>
+<% } %>
